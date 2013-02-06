@@ -196,7 +196,7 @@
                     "name": "storage.type.ocaml"
                 }
             }, 
-            "match": "^[ \\t]*(class\\s+type\\s+)((\\[\\s*('[A-Za-z][a-zA-Z0-9_']*(?:\\s*,\\s*'[A-Za-z][a-zA-Z0-9_']*)*)\\s*\\]\\s+)?[a-z_][a-zA-Z0-9'_]*)", 
+            "match": "^[ \\t]*(class(?:\\s+type)?\\s+)((\\[\\s*('[A-Za-z][a-zA-Z0-9_']*(?:\\s*,\\s*'[A-Za-z][a-zA-Z0-9_']*)*)\\s*\\]\\s+)?[a-z_][a-zA-Z0-9'_]*)", 
             "name": "meta.class.type-definition.ocaml"
         }, 
         {
@@ -317,7 +317,7 @@
             ]
         }, 
         {
-            "begin": "\\b(object)\\s*(?:(\\()(_?[a-z]+)(\\)))?\\s*$", 
+            "begin": "\\b(object)\\s*(?:(\\()(_?[a-z]+)(?:([^\\s]+))(\\)))?\\s*$", 
             "beginCaptures": {
                 "1": {
                     "name": "keyword.other.object-definition.ocaml"
@@ -329,6 +329,9 @@
                     "name": "entity.name.type.self-binding.ocaml"
                 }, 
                 "4": {
+                    "name": "storage.type.ocaml"
+                },
+                "5": {
                     "name": "punctuation.definition.self-binding.ocaml"
                 }
             }, 
@@ -344,7 +347,7 @@
             "name": "meta.object.ocaml", 
             "patterns": [
                 {
-                    "begin": "\\b(method)(?:\\s*!)?\\s+(virtual\\s+)?(private\\s+)?([a-z_][a-zA-Z0-9'_]*)", 
+                    "begin": "\\b(method)(?:(?:\\s*!\\s*)?|\\s+)(virtual\\s+)?(private\\s+)?([a-z_][a-zA-Z0-9'_]*)", 
                     "beginCaptures": {
                         "1": {
                             "name": "keyword.other.method-definition.ocaml"

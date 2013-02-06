@@ -7,8 +7,32 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "subl-ocaml-lang.sublime-project",
+			"settings":
+			{
+				"buffer_size": 82,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "                {\n                    \"begin\": \"\\\\b(method)(?:\\\\s*!)?\\\\s+(virtual\\\\s+)?(private\\\\s+)?([a-z_][a-zA-Z0-9'_]*)\", \n                    \"beginCaptures\": {\n                        \"1\": {\n                            \"name\": \"keyword.other.method-definition.ocaml\"\n                        }, \n                        \"2\": {\n                            \"name\": \"keyword.other.method-definition.ocaml\"\n                        }, \n                        \"3\": {\n                            \"name\": \"keyword.other.method-restriction.ocaml\"\n                        }, \n                        \"4\": {\n                            \"name\": \"entity.name.function.method.ocaml\"\n                        }\n                    }, \n                    \"end\": \"(=|:)\", \n                    \"endCaptures\": {\n                        \"1\": {\n                            \"name\": \"keyword.operator.ocaml\"\n                        }\n                    }, \n                    \"name\": \"meta.method.ocaml\", \n                    \"patterns\": [\n                        {\n                            \"include\": \"#variables\"\n                        }\n                    ]\n                },",
+			"settings":
+			{
+				"buffer_size": 1169,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "OCaml.json",
+			"settings":
+			{
+				"buffer_size": 51986,
+				"line_ending": "Unix"
+			}
+		}
 	],
-	"build_system": "",
+	"build_system": "Packages/Makefile/Make.sublime-build",
 	"command_palette":
 	{
 		"height": 87.0,
@@ -36,6 +60,12 @@
 	},
 	"file_history":
 	[
+		"/Users/nazarov/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/nazarov/projects/word/light-client/res/game-data/words.json",
+		"/Users/nazarov/Desktop/subl-ocaml-lang/OCaml.json",
+		"/Users/nazarov/projects/words-pictures/client/GuessWord/GuessWord/GuessWordController.m",
+		"/Users/nazarov/projects/words-pictures/client/GuessWord/GuessWord/AppDelegate.m",
+		"/Users/nazarov/Desktop/subl-ocaml-lang/Makefile",
 		"/Users/andrey/work/projects/subl-ocaml-lang/Makefile",
 		"/Users/andrey/work/projects/mobile-farm/mediator/BoardMediator.ml",
 		"/Users/andrey/work/projects/mobile-farm/mediator/dialogs/NeighbourMediator.ml",
@@ -58,6 +88,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"type",
+			"(object",
+			"object",
+			"RedspellStatistics",
 			"open",
 			"open ExtList;"
 		],
@@ -77,8 +111,90 @@
 	"groups":
 	[
 		{
+			"selected": 2,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "subl-ocaml-lang.sublime-project",
+					"settings":
+					{
+						"buffer_size": 82,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								55,
+								55
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"settings":
+					{
+						"buffer_size": 1169,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1169,
+								1169
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "OCaml.json",
+					"settings":
+					{
+						"buffer_size": 51986,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								29231,
+								29235
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 75.0,
+						"translation.y": 11737.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -113,6 +229,10 @@
 		]
 	},
 	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
 	"replace":
 	{
 		"height": 64.0
@@ -145,7 +265,7 @@
 		[
 			[
 				"",
-				"/Users/andrey/work/subl-projs/mobile-farm.sublime-project"
+				"/Users/nazarov/subl-projs/lightning_android.sublime-project"
 			]
 		],
 		"width": 380.0
