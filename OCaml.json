@@ -165,7 +165,7 @@
             ]
         },
         {
-            "begin": "\\b(with|fun)\\b", 
+            "begin": "(\\[)", 
             "beginCaptures": {
                 "1": {
                     "name": "keyword.control.match-definition.ocaml"
@@ -947,7 +947,7 @@
                     "name": "constant.language.universal-match.ocaml"
                 }, 
                 {
-                    "match": "(\\[|\\|)(?=\\s*\\S)(?=.*(->)|\\b(when)\\b|\\s(?=\\|))",
+                    "match": "(\\|)(?=\\s*\\S)(?=.*(->)|\\b(when)\\b|\\s(?=\\|))",
                     "name": "keyword.control.match-definition.ocaml"
                 }, 
                 {
@@ -966,7 +966,7 @@
                     "name": "meta.match-option.ocaml", 
                     "patterns": [
                         {
-                            "match": "\\[|\\|", 
+                            "match": "\\|", 
                             "name": "keyword.control.match-definition.ocaml"
                         }, 
                         {
