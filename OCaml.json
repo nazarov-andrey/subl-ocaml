@@ -60,7 +60,7 @@
         },
 
         {
-            "begin": "\\b(value)\\s*([a-z_][a-zA-Z0-9'_]*)", 
+            "begin": "\\b(value)\\s+([a-z_][a-zA-Z0-9'_]*)(?=\\s*:)",
             "beginCaptures": {
                 "1": {
                     "name": "keyword.other.method-definition.ocaml"
@@ -69,13 +69,13 @@
                     "name": "entity.name.function.method.ocaml"
                 }
             }, 
-            "end": ":", 
+            "end": ";", 
             "endCaptures": {
                 "1": {
                     "name": "keyword.operator.ocaml"
                 }
             }, 
-            "name": "meta.method.ocaml", 
+            "name": "meta.value.ocaml", 
             "patterns": [
                 {
                     "include": "#variables"
