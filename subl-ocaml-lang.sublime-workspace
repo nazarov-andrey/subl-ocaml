@@ -8,7 +8,7 @@
 	"buffers":
 	[
 	],
-	"build_system": "",
+	"build_system": "Packages/Makefile/Make.sublime-build",
 	"command_palette":
 	{
 		"height": 87.0,
@@ -36,6 +36,13 @@
 	},
 	"file_history":
 	[
+		"/Users/nazarov/Desktop/subl-ocaml-lang/subl-ocaml-lang.sublime-project",
+		"/Users/nazarov/Desktop/subl-ocaml-lang/OCaml.json",
+		"/Users/nazarov/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/nazarov/projects/word/light-client/res/game-data/words.json",
+		"/Users/nazarov/projects/words-pictures/client/GuessWord/GuessWord/GuessWordController.m",
+		"/Users/nazarov/projects/words-pictures/client/GuessWord/GuessWord/AppDelegate.m",
+		"/Users/nazarov/Desktop/subl-ocaml-lang/Makefile",
 		"/Users/andrey/work/projects/subl-ocaml-lang/Makefile",
 		"/Users/andrey/work/projects/mobile-farm/mediator/BoardMediator.ml",
 		"/Users/andrey/work/projects/mobile-farm/mediator/dialogs/NeighbourMediator.ml",
@@ -58,6 +65,25 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"matchpatterns",
+			"lists",
+			"matchpatter",
+			"lists",
+			"matchpa",
+			"list",
+			"matchpatterns",
+			"variant",
+			"variance",
+			"matchpatterns",
+			"\\bmatch",
+			"\\\\bmatch",
+			"match",
+			"class",
+			"class ty",
+			"type",
+			"(object",
+			"object",
+			"RedspellStatistics",
 			"open",
 			"open ExtList;"
 		],
@@ -113,6 +139,10 @@
 		]
 	},
 	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
 	"replace":
 	{
 		"height": 64.0
@@ -145,7 +175,7 @@
 		[
 			[
 				"",
-				"/Users/andrey/work/subl-projs/mobile-farm.sublime-project"
+				"/Users/nazarov/subl-projs/lightning_android.sublime-project"
 			]
 		],
 		"width": 380.0
