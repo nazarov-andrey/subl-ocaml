@@ -57,7 +57,32 @@
                     "include": "$self"
                 }
             ]
-        }, 
+        },
+
+        {
+            "begin": "\\b(value)\\s*([a-z_][a-zA-Z0-9'_]*)", 
+            "beginCaptures": {
+                "1": {
+                    "name": "keyword.other.method-definition.ocaml"
+                }, 
+                "2": {
+                    "name": "entity.name.function.method.ocaml"
+                }
+            }, 
+            "end": ":", 
+            "endCaptures": {
+                "1": {
+                    "name": "keyword.operator.ocaml"
+                }
+            }, 
+            "name": "meta.method.ocaml", 
+            "patterns": [
+                {
+                    "include": "#variables"
+                }
+            ]
+        },
+
         {
             "begin": "\\b(value|let|and)\\s+(?!\\(\\*)((rec\\s+)([a-z_][a-zA-Z0-9_']*)\\b|([a-z_][a-zA-Z0-9_']*|\\([^)]+\\))(?=\\s)((?=\\s*=\\s*(?=fun(?:ction)\\b))|(?!\\s*=)))", 
             "beginCaptures": {
@@ -135,12 +160,28 @@
                     "include": "$self"
                 }
             ]
-        }, 
+        },
+
         {
             "begin": "^\\s*(?=type\\s)", 
-            "end": "\\b(?=let|end|val)|^\\s*$", 
+            "end": "\\b(?=;)|\\b(?=let|end|val)|^\\s*$", 
             "name": "meta.type-definition-group.ocaml", 
             "patterns": [
+                {
+                    "match": "\\b(type)\\s+([^=|;]+)\\s*(;)",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.other.type-definition.ocaml"
+                        }, 
+                        "2": {
+                            "name": "storage.type.ocaml"
+                        }, 
+                        "3": {
+                            "name": "punctuation.separator.type-definition.ocaml"
+                        }                        
+                    }
+                },
+
                 {
                     "begin": "\\b(type|and)\\s+([^=]*)(=)?", 
                     "beginCaptures": {
@@ -154,7 +195,7 @@
                             "name": "punctuation.separator.type-definition.ocaml"
                         }
                     }, 
-                    "end": "(?=\\b(type|and|let|end|val)\\b)|(?=^\\s*$)", 
+                    "end": "(?=\\b;)|(?=\\b(type|and|let|end|val)\\b)|(?=^(\\s*)$)", 
                     "name": "meta.type-definition.ocaml", 
                     "patterns": [
                         {
@@ -212,10 +253,10 @@
                     "name": "storage.type.ocaml"
                 }
             }, 
-            "end": "(=)", 
+            "end": "(=|:)", 
             "endCaptures": {
                 "1": {
-                    "name": "keyword.operator.ocaml"
+                    "name": "punctuation.separator.class-def.ocaml"
                 }
             }, 
             "name": "meta.class.ocaml", 
@@ -238,10 +279,10 @@
                     "name": "storage.type.ocaml"
                 }
             }, 
-            "end": "(=)", 
+            "end": "(=|:)", 
             "endCaptures": {
                 "1": {
-                    "name": "keyword.operator.ocaml"
+                    "name": "punctuation.separator.class-def.ocaml"
                 }
             }, 
             "name": "meta.class.virtual.ocaml", 
@@ -1108,8 +1149,12 @@
                             "name": "punctuation.separator.module-reference.ocaml"
                         }
                     }, 
-                    "match": "\\b([A-Z][a-zA-Z0-9'_]*)(\\.)", 
-                    "name": "meta.module-reference.ocaml"
+                    "match": "\\b([A-Z][a-zA-Z0-9'_]*)(\\.)",
+                    "captures": {
+                        "1": {
+                            "name": "meta.module-reference.ocaml"
+                        }
+                    }
                 }
             ]
         }, 
@@ -1164,6 +1209,51 @@
         }, 
         "typedefs": {
             "patterns": [
+                {
+                    "begin": "(\\{)", 
+                    "beginCaptures": {
+                        "1": {
+                            "name": "punctuation.definition.record.ocaml"
+                        }
+                    }, 
+                    "end": "(\\})", 
+                    "endCaptures": {
+                        "1": {
+                            "name": "punctuation.definition.record.ocaml"
+                        }
+                    }, 
+
+                    "patterns": [
+                        {
+                            "include": "#moduleref"
+                        }, 
+                        {
+                            "begin": "\\b([a-z][a-zA-Z0-9'_]*)\\s*(:)", 
+                            "beginCaptures": {
+                                "1": {
+                                    "name": "entity.name.tag.record.ocaml"
+                                }, 
+                                "2": {
+                                    "name": "punctuation.separator.record.field-assignment.ocaml"
+                                }
+                            }, 
+                            "end": "(;)|(?=\\})", 
+                            "endCaptures": {
+                                "1": {
+                                    "name": "punctuation.separator.record.ocaml"
+                                }
+                            }, 
+                            "name": "meta.recordfield.match.ocaml", 
+                            "patterns": [
+                                {
+                                    "include": "#matchpatterns"
+                                }
+                            ]
+                        }
+                    ]
+                },
+
+
                 {
                     "match": "\\|", 
                     "name": "punctuation.separator.variant-definition.ocaml"
