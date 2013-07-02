@@ -120,9 +120,9 @@
                     "include": "#variables"
                 }
             ]
-        },        
+        },
         {
-            "begin": "(\\(|\\s)(?=fun\\s)", 
+            "begin": "(\\(?)(?=fun\\s)", 
             "beginCaptures": {
                 "1": {
                     "name": "punctuation.definition.function.anonymous.ocaml"
@@ -167,20 +167,6 @@
             "end": "\\b(?=;)|\\b(?=let|end|val)|^\\s*$", 
             "name": "meta.type-definition-group.ocaml", 
             "patterns": [
-                {
-                    "match": "\\b(type)\\s+([^=|;]+)\\s*(;)",
-                    "captures": {
-                        "1": {
-                            "name": "keyword.other.type-definition.ocaml"
-                        }, 
-                        "2": {
-                            "name": "storage.type.ocaml"
-                        }, 
-                        "3": {
-                            "name": "punctuation.separator.type-definition.ocaml"
-                        }                        
-                    }
-                },
 
                 {
                     "begin": "\\b(type|and)\\s+([^=]*)(=)?", 
@@ -206,13 +192,13 @@
             ]
         },
         {
-            "begin": "\\b(with|fun)\\b", 
+            "begin": "\\b(with)\\b", 
             "beginCaptures": {
                 "1": {
                     "name": "keyword.control.match-definition.ocaml"
                 }
             }, 
-            "end": "(\\])",
+            "end": "((?<!\\[)\\])",
             "endCaptures": {
                 "1": {
                     "name": "keyword.control.match-definition.ocaml"
@@ -385,7 +371,7 @@
             "name": "meta.object.ocaml", 
             "patterns": [
                 {
-                    "begin": "\\b(method)(?:\\s*!)?\\s+(virtual\\s+)?(private\\s+)?([a-z_][a-zA-Z0-9'_]*)", 
+                    "begin": "\\b(method)(?:\\s+|(?:\\s*!\\s*)?)(virtual\\s+)?(private\\s+)?([a-z_][a-zA-Z0-9'_]*)",
                     "beginCaptures": {
                         "1": {
                             "name": "keyword.other.method-definition.ocaml"
@@ -957,7 +943,7 @@
                             "name": "punctuation.definition.list.begin.ocaml"
                         }
                     }, 
-                    "end": "(?<!\\||>)(])", 
+                    "end": "(?<!\\||>)(\\])", 
                     "endCaptures": {
                         "1": {
                             "name": "punctuation.definition.list.end.ocaml"
@@ -983,7 +969,25 @@
                 {
                     "match": "\\b_\\b", 
                     "name": "constant.language.universal-match.ocaml"
-                }, 
+                },
+                {
+                    "begin": "(\\[|\\|)",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.control.match-definition.ocaml"
+                        }
+                    },
+                    "end": "(->)|\\b(when)\\b|\\s(?=\\|)",
+                    "name": "meta.match-option.ocaml",
+                    "patterns": [
+                        {
+                            "include": "#constants"
+                        },
+                        {
+                            "include": "#lists"
+                        }
+                    ]
+                },
                 {
                     "match": "(\\[|\\|)(?=\\s*\\S)(?=.*(->)|\\b(when)\\b|\\s(?=\\|))",
                     "name": "keyword.control.match-definition.ocaml"
