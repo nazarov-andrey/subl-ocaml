@@ -253,7 +253,8 @@
             "name": "Markup: Heading", 
             "scope": "markup.heading", 
             "settings": {
-                "fontStyle": "bold", 
+                "fontStyle": "bold",
+                "fontStyle": "italic", 
                 "foreground": "#0C07FF"
             }
         }, 
@@ -273,34 +274,44 @@
             }
         },
         {
-            "name": "OCaml variant tag",
-            "scope": "entity.name.tag.variant",
-            "settings": {
-                "foreground": "#585CF6"
-            }
-        },
-        {
-            "name": "OCaml type",
+            "name": "OCaml storage",
             "scope": "storage.type.ocaml",
             "settings": {
+                "fontStyle": "bold",
                 "foreground": "#585CF6"
             }
         },
         {
-            "name": "OCaml module ref",
-            "scope": "meta.module-reference.ocaml, entity.name.type.module.ocaml, entity.name.type.module-type.ocaml, support.other.module.ocaml",
+            "name": "OCaml std values",
+            "scope": "variable.language.ocaml",
             "settings": {
                 "fontStyle": "bold",
-                "foreground": "#0000A2"
-            }
+                "foreground": "#3C4C72"
+            }            
         },
         {
-            "name": "OCaml module ref",
-            "scope": "entity.name.type.class-type.ocaml, entity.name.type.class.ocaml",
+            "name": "OCaml module",
+            "scope": "entity.name.module.ocaml",
             "settings": {
                 "fontStyle": "bold",
-                "foreground": "#318495"
-            }
+                "foreground": "#21439C"
+            }            
+        },
+        {
+            "name": "OCaml tagname",
+            "scope": "entity.name.tag.ocaml",
+            "settings": {
+                "fontStyle": "bold",
+                "foreground": "#21439C"
+            }            
+        },
+        {
+            "name": "OCaml camlp4.macro directives",
+            "scope": "keyword.other.preprocessor.ocaml, keyword.other.ldebug.ocaml",
+            "settings": {
+                "fontStyle": "bold",
+                "foreground": "#1A921C"
+            }            
         }
     ], 
     "uuid": "71D40D9D-AE48-11D9-920A-000D93589AF6"
