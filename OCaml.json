@@ -70,7 +70,11 @@
         {
             "match": "\\bdebug(:[A-Za-z0-9_]+)?\\b",
             "name": "keyword.other.ldebug.ocaml"
-        },        
+        },
+        {
+            "match": "\\bproftimer:[A-Za-z0-9_]+\\b",
+            "name": "keyword.other.ldebug.ocaml"
+        },
         {
             "match": "\\b(Some|None|True|False)\\b",
             "name": "constant.language.ocaml"
