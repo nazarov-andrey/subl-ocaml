@@ -8,7 +8,11 @@
     "keyEquivalent": "", 
     "name": "OCaml", 
     "patterns": [
-        { "include": "#comments" },        
+        { "include": "#comments" },
+        {
+            "match": "\\b('self|self|super)\\b",
+            "name": "variable.language.ocaml"
+        },
         {
             "match": "(value)\\s+[\\W]",
             "captures": { "1":{"name": "keyword.other.ocaml"} }
@@ -58,7 +62,7 @@
         {
             "match": "(\\?|~)[a-z_][A-Za-z0-9_']*",
             "name": "entity.name.label.ocaml"
-        },        
+        },
         {
             "match": "\\b(and|as|assert|asr|begin|class|constraint|do|done|downto|else|end|exception|external|false|for|fun|function|functor|if|in|include|inherit|initializer|land|lazy|let|lor|lsl|lsr|lxor|match|method|module|mod|mutable|new|object|of|open|or|private|rec|sig|struct|then|to|true|try|type|value|val|virtual|when|while|with|not)\\b",
             "name": "keyword.other.ocaml"
@@ -84,13 +88,9 @@
             "name": "constant.language.ocaml"
         },
         {
-            "match": "\\b(self'|self|super)\\b",
-            "name": "variable.language.ocaml"
-        },        
-        {
             "match": "\\b(string|array|option|list|int|float|bool|ref|unit)\\b",
             "name": "storage.type.ocaml"
-        },
+        },       
         {
             "match": "!=|#|&|&&|'|(|)|\\*|\\+|,|-|-\\.|->|\\.|\\.\\.|:|::|:=|:>|;|;;|<|<-|=|>|>]|>}|\\?|\\?\\?|\\[|\\[<|\\[>|[\\||\\|\\]|_|`|{|{<|\\||\\|]|}|~",
             "name": "keyword.other.ocaml"
