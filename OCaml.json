@@ -72,7 +72,7 @@
             "name": "support.function.ocaml"
         },
         {
-            "match": "\\b(DEFINE|IFDEF|THEN|ELSE|END)\\b",
+            "match": "\\b(DEFINE|IFDEF|THEN|ELSE|END|IFPLATFORM|ENDPLATFORM)\\b",
             "name": "keyword.other.preprocessor.ocaml"
         },
         {
