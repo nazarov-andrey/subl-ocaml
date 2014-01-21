@@ -80,7 +80,7 @@
             "name": "keyword.other.preprocessor.ocaml"
         },
         {
-            "match": "\\bdebug(:[A-Za-z0-9_]+)?\\b",
+            "match": "\\b(debug|DEBUG)(:[A-Za-z0-9_]+)?\\b",
             "name": "keyword.other.ldebug.ocaml"
         },
         {
